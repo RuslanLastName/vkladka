@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace WpfApp2
 {
@@ -13,12 +14,16 @@ namespace WpfApp2
         string name;
         int parent;
         string path = "";
+        string mypath = "";
+        TreeViewItem tree;
 
         public Category(int id, string name, int parent)
         {
             this.id = id;
             this.name = name;
             this.parent = parent;
+            tree = new TreeViewItem();
+            tree.Header = name;
         }
 
         public int Parent
@@ -45,6 +50,22 @@ namespace WpfApp2
             }
         }
 
+        public string myPath
+        {
+            get
+            {
+                return mypath;
+            }
+        }
+
+        public TreeViewItem getTree
+        {
+            get
+            {
+                return tree;
+            }
+        }
+
         public int ID
         {
             get
@@ -65,14 +86,17 @@ namespace WpfApp2
                 {
                     if (item.id == parent)
                     {
+                        //tree.Items.Add(item.getTree);
+                        item.getTree.Items.Add(tree);
                         path = item.path+ '/' + parent;
                         break;
                     }
 
                 }
             }
-
+            mypath = path + '/' + id;
         }
+
     }
 
     public class CategoryCollection : IEnumerable

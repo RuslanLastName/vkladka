@@ -46,32 +46,20 @@ namespace WpfApp2
             {
                 item.initPath(categoryCollection);
                 ListBox1.Items.Add(item.Path);
+                ListBox1.Items.Add(item.myPath + " <--");
                 TreeViewItem tr = new TreeViewItem();
                 tr.Header = item.Name;
+                object nTr = treeView1.Items.CurrentItem;
 
                 if (item.Path == "0")
                 {
-                    treeView1.Items.Add(tr);
-                    myList.Add(tr);
-
+                    //treeView1.Items.Add(tr);
+                    treeView1.Items.Add(item.getTree);
+                    myList.Add(tr); 
                 }
-                //foreach (Category item2 in categoryCollection)
-                //{
-                //    if (item.ID == item2.Parent)
-                //    {
-                //        TreeViewItem tr2 = new TreeViewItem();
-                //        tr2.Header = item2.Name;
-                //        tr.Items.Add(tr2);
-                //        myList.Add(tr2);
-                //    }
-                //}
-
-                //if (item.id == mylist)
-                //{
-
-                //}
 
             }
+          
 
         }
 
