@@ -13,8 +13,6 @@ namespace WpfApp2
         int id;
         string name;
         int parent;
-        string path = "";
-        string mypath = "";
         TreeViewItem tree;
 
         public Category(int id, string name, int parent)
@@ -42,21 +40,7 @@ namespace WpfApp2
             }
         }
 
-        public string Path
-        {
-            get
-            {
-                return path;
-            }
-        }
 
-        public string myPath
-        {
-            get
-            {
-                return mypath;
-            }
-        }
 
         public TreeViewItem getTree
         {
@@ -86,15 +70,12 @@ namespace WpfApp2
                 {
                     if (item.id == parent)
                     {
-                        //tree.Items.Add(item.getTree);
                         item.getTree.Items.Add(tree);
-                        path = item.path+ '/' + parent;
                         break;
                     }
 
                 }
             }
-            mypath = path + '/' + id;
         }
 
     }
