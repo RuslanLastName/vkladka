@@ -43,7 +43,7 @@ namespace WpfApp2
             foreach (Category item in categoryCollection)
             {
                 item.initPath(categoryCollection);
-                if (item.Path == "0")
+                if (item.Parent == 0)
                 {
                     treeView1.Items.Add(item.getTree);
                 }

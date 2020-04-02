@@ -9,7 +9,6 @@
     <Grid>
         <TreeView x:Name="treeView1" HorizontalAlignment="Left" Height="189" Margin="33,38,0,0" VerticalAlignment="Top" Width="129"/>
         <DataGrid x:Name="Grid1" HorizontalAlignment="Left" Height="240" Margin="308,38,0,0" VerticalAlignment="Top" Width="389"/>
-        <ListBox x:Name="ListBox1" HorizontalAlignment="Left" Height="118" Margin="105,278,0,0" VerticalAlignment="Top" Width="375"/>
 
     </Grid>
 </Window>

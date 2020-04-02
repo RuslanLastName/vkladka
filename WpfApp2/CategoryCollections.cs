@@ -60,11 +60,7 @@ namespace WpfApp2
 
         public void initPath(CategoryCollection collection)
         {
-            if (parent == 0)
-            {
-                path += parent.ToString();
-            }
-            else
+            if (parent != 0)
             {
                 foreach (Category item in collection)
                 {
