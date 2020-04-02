@@ -40,22 +40,14 @@ namespace WpfApp2
 
             CategoryCollection categoryCollection = new CategoryCollection(category);
 
-            List<TreeViewItem> myList = new List<TreeViewItem>();
-
             foreach (Category item in categoryCollection)
             {
                 item.initPath(categoryCollection);
                 ListBox1.Items.Add(item.Path);
                 ListBox1.Items.Add(item.myPath + " <--");
-                TreeViewItem tr = new TreeViewItem();
-                tr.Header = item.Name;
-                object nTr = treeView1.Items.CurrentItem;
-
                 if (item.Path == "0")
                 {
-                    //treeView1.Items.Add(tr);
                     treeView1.Items.Add(item.getTree);
-                    myList.Add(tr); 
                 }
 
             }
